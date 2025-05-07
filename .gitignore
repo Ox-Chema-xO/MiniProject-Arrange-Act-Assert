@@ -1,0 +1,44 @@
+# Byte‑compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Entornos virtuales
+venv/
+act8/
+env/
+
+# Archivos de pytest
+.pytest_cache/
+.cache
+coverage.xml
+htmlcov/
+.coverage
+
+# Archivos de logs
+*.log
+
+# Configs de editores/IDEs
+.vscode/
+
+# Dependencias instaladas
+pip-wheel-metadata/
+*.egg-info/
+dist/
+build/
+
+# Archivos de sistema (por compatibilidad multiplataforma)
+.DS_Store
+Thumbs.db
+
+# Mypy
+.mypy_cache/
+
+# Pyre type checker
+.pyre/
+
+# Factory boy cache 
+.factory_boy/
+
+# Archivos temporales
+*~
