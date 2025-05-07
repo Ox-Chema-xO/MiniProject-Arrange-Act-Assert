@@ -34,7 +34,7 @@ def test_agregar_producto_existente_incrementa_cantidad():
     """
     # Arrange
     carrito = Carrito()
-    producto = ProductoFactory(nombre="Mouse", precio=50.00)
+    producto = ProductoFactory(nombre="Mouse", precio=50.00, stock=7)
     carrito.agregar_producto(producto, cantidad=1)
     
     # Act
@@ -342,3 +342,17 @@ def test_aplicar_cupon_con_limite(carrito, producto_generico):
 
     # Assert
     assert total_con_cupon == 450.00
+
+def test_agregar_producto_excede_stock():
+    """
+    Red: Se espera que al intentar agregar una cantidad mayor a la disponible en stock se lance un ValueError.
+    """
+    # Arrange: Se crea un producto y un carrito
+    # Suponemos que el producto tiene 5 unidades en stock.
+    
+    producto = Producto("ProductoStock", 100.00, 5)
+    carrito = Carrito()
+
+    # Act & Assert
+    with pytest.raises(ValueError):
+        carrito.agregar_producto(producto, cantidad=6)
